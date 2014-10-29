@@ -1,6 +1,7 @@
 'use strict';
 
 var path = require('path');
+var conf = require("../ModuleWorkFlow").buildConfig;
 var fs = require('fs');
 
 
@@ -8,8 +9,8 @@ module.exports = function newModule(grunt) {
 	
 	
 	var build = grunt.config.get("build");
-	var modulesDir = build.modulesDir;
-	var newModuleDir = build.newModuleDir;
+	var modulesDir = conf.modules;
+	var newModuleDir = conf.newModuleTemplate;
 	var replaceName = /{moduleName}/g;
 	var replaceDate = /{date}/g;
 	var replaceAuthor = /{author}/g;

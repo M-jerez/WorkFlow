@@ -1,25 +1,34 @@
 'use strict';
 var p = require('path');
 var fs = require('fs');
+var conf = require("../ModuleWorkFlow").buildConfig;
 
+/**
+ * This task copies 'module/backend' to 'projectBackEnd'
+ * and 'module/frontend' to 'projectFrontEnt'
+ */
 module.exports = function copyto(grunt) {
     // Load task and build config
     grunt.loadNpmTasks('grunt-copy-to');
-    var modulesDir = "./modules";
-
-
-    // Options for copy app
+    var modulesDir = conf.modules;
     var taskConfig = {};
 
 
     //Sets the options for each module dynamically
     getModuleList().forEach(function(moduleName) {
-        taskConfig["build_" + moduleName] = {
+        taskConfig["module-" + moduleName] = {
             files: [
                 {
-                    cwd: p.join("./modules", moduleName, "/html"),
+                    // frontend directories
+                    cwd: p.join(conf.modules, moduleName, conf.moduleBackend),
                     src: ['**/*'],
-                    dest: p.join("./_assets/_html/",moduleName,"/")
+                    dest: conf.projectBackend
+                },
+                {
+                    // backend directories
+                    cwd: p.join(conf.modules, moduleName, conf.moduleFrontend),
+                    src: ['**/*'],
+                    dest: conf.projectFronted
                 }
             ]
         }

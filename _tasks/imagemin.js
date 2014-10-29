@@ -1,5 +1,7 @@
 'use strict';
-var p = require('path');
+var path = require('path');
+var conf = require("../ModuleWorkFlow").buildConfig;
+
 
 module.exports = function imagemin(grunt) {
     // Load task
@@ -17,9 +19,9 @@ module.exports = function imagemin(grunt) {
                 {
                     expand: true,
                     flatten: true,
-                    cwd: "./modules/",
+                    cwd: conf.modules,
                     src: ["**/*.{png,jpg,jpeg,gif,PNG,JPG,JPEG,GIF}"],
-                    dest: "./_assets/_img/"
+                    dest: path.join(conf.projectFronted,"img/")
                 }
             ]
         }

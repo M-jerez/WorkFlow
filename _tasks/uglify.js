@@ -1,10 +1,10 @@
 'use strict';
-var p =  require('path');
+var path = require('path');
+var conf = require("../ModuleWorkFlow").buildConfig;
 
 module.exports = function uglify(grunt) {
 	// Load task
 	grunt.loadNpmTasks('grunt-contrib-uglify');
-	var build = grunt.config.get("build");
 
 	// Options
 	return {
@@ -13,12 +13,12 @@ module.exports = function uglify(grunt) {
 			sourceMapIncludeSources: false
 		},
 		components_js: {
-			dest: p.join(build.buildDir, build.frontEndFolder , '_js/dependencies.min.js'),
-			src: p.join(build.buildDir, build.frontEndFolder , "_js/dependencies.js")
+			dest: path.join(conf.projectFronted, 'js/dependencies.min.js'),
+			src: path.join(conf.projectFronted, "js/dependencies.js")
 		},
 		app_js: {
-			dest: p.join(build.buildDir, build.frontEndFolder , '_js/app.min.js'),
-			src: p.join(build.buildDir, build.frontEndFolder , '_js/app.js')
+			dest: path.join(conf.projectFronted, 'js/app.min.js'),
+			src: path.join(conf.projectFronted, 'js/app.js')
 		}
 	};
 };

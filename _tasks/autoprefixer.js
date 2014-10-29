@@ -1,6 +1,6 @@
 'use strict';
 var path = require('path');
-var conf = require("../ModuleFlow");
+var conf = require("../ModuleWorkFlow").buildConfig;
 
 
 module.exports = function autoprefixer(grunt) {
@@ -13,8 +13,8 @@ module.exports = function autoprefixer(grunt) {
             browsers: ['> 1%', 'last 2 versions', "ie 8", 'ie 9']
         },
         build: {
-            dest: path.join(conf.frontendDir,"_css/app.css"),
-            src: path.join(conf.frontendDir,"_css/less.css")
+            dest: path.join(conf.projectFronted,"css/app.css"),
+            src: path.join(conf.projectFronted,"css/less.css")
         }
     };
 };

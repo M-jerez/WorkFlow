@@ -1,5 +1,7 @@
 'use strict';
-var p = require('path');
+var path = require('path');
+var conf = require("../ModuleWorkFlow").buildConfig;
+var dependencies = require("../ModuleWorkFlow").JsDependencies;
 
 module.exports = function concat(grunt) {
     // Load task
@@ -12,14 +14,13 @@ module.exports = function concat(grunt) {
             separator: ';'
         },
         dependencies: {
-            //the dependencies list must be set manually, this are all javascript libraries like Jquery, or any other,
-            src: [
-            ],
-            dest: "./_assets/_js/dependencies.js"
+            //Dependencies list must be set manually in the config ModuleWorkFlow.js file
+            src: dependencies,
+            dest: path.join(conf.projectFronted,"js/dependencies.js")
         },
         app: {
-            src: "./modules/*/js/**/*.js",
-            dest: "./_assets/_js/app.js"
+            src: path.join(conf.modules,"*/",conf.moduleAssets,"**/*.js"),
+            dest:path.join(conf.projectFronted,"js/app.js")
         }
     };
 };

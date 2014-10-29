@@ -1,6 +1,6 @@
 'use strict';
 var path = require('path');
-var conf = require("../ModuleFlow");
+var conf = require("../ModuleWorkFlow").buildConfig;
 
 module.exports = function less(grunt) {
     // Load task and build config
@@ -14,8 +14,8 @@ module.exports = function less(grunt) {
             },
             files: [
                 {
-                    dest:  path.join(conf.frontendDir,"_css/less.css"),
-                    src: path.join(conf.modulesDir,"/*/css/index.less")
+                    dest:  path.join(conf.projectFronted,"css/less.css"),
+                    src: path.join(conf.modules,"/*/",conf.moduleAssets,"**/index.less")
                 }
             ]
         }

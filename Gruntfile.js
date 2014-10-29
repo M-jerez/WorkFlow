@@ -10,8 +10,7 @@ module.exports = function (grunt) {
 	});
 
 	// Register group tasks
-	 grunt.registerTask('build', ['copyto', 'imagemin', 'less', 'autoprefixer', 'concat' , "uglify", "translate_extract"]);
-         grunt.registerTask('RUN >', ['build',"autowatch"]);
-	//grunt.registerTask('test', [ 'mochacli' ]);
+	grunt.registerTask('build', ['copyto', 'imagemin', 'less', 'autoprefixer', 'concat' , "uglify", "translate_extract"]);
+    grunt.registerTask('RUN', ['build',"autowatch"]);
 
 };

@@ -1,6 +1,7 @@
 'use strict';
 
 var path = require('path');
+var conf = require("../ModuleWorkFlow").buildConfig;
 
 
 module.exports = function translate_extract(grunt) {
@@ -10,29 +11,26 @@ module.exports = function translate_extract(grunt) {
     var build = grunt.config.get("build");
     // Options
     return {
-//        build_frontend: {
-//            options: {
-//                locales: ["de", "en", "es", "fr"],
-//                templatesDest: path.join(build.publicDir, '_templates/frontend'),
-//                localesDest: path.join(build.publicDir, '_locales/frontend')
-//            },
-//            files: [
-//                {
-//                    src: [
-//                        path.join(build.modulesDir, "*", build.frontEndFolder, '**/*.html')
-//                    ]
-//                }
-//            ]
-//        },
-        build_backendp: {
+        build_frontend: {
             options: {
                 locales: ["de", "en", "es", "fr"],
-                outputDir: './_assets/_locales/backend',
+                outputDir: path.join(conf.modules,"_locales",conf.moduleFrontend ,"locales"),
                 builtInParser: "gettextPHP_KV",
                 errorOnDuplicatedKeys: false
             },
             files: {
-                src: './app/views/**/*.phtml'
+                src: path.join(conf.modules, "*", conf.moduleBackend, "views/**/*")
+            }
+        },
+        build_backendp: {
+            options: {
+                locales: ["de", "en", "es", "fr"],
+                outputDir: path.join(conf.modules,"_locales",conf.moduleBackend ,"locales"),
+                builtInParser: "gettextPHP_KV",
+                errorOnDuplicatedKeys: false
+            },
+            files: {
+                src: path.join(conf.modules,"*",conf.moduleBackend ,"views/**/*")
             }
         }
     };

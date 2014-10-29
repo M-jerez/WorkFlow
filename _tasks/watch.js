@@ -1,5 +1,4 @@
 'use strict';
-var p = require('path');
 
 module.exports = function watch(grunt) {
     // Load task
