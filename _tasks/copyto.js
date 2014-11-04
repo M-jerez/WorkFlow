@@ -19,13 +19,15 @@ module.exports = function copyto(grunt) {
         taskConfig["module-" + moduleName] = {
             files: [
                 {
-                    // frontend directories
+                    // backend directories
+                    expand:true,
                     cwd: p.join(conf.modules, moduleName, conf.moduleBackend),
                     src: ['**/*'],
                     dest: conf.projectBackend
                 },
                 {
-                    // backend directories
+                    // frontend directories
+                    expand:true,
                     cwd: p.join(conf.modules, moduleName, conf.moduleFrontend),
                     src: ['**/*'],
                     dest: conf.projectFronted

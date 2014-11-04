@@ -12,7 +12,7 @@
         ,"grunt-contrib-imagemin": "~0.7.1"
         ,"grunt-contrib-watch": "~0.5.3"
         ,"grunt-autoprefixer": "~0.8.1"
-        ,"grunt-copy-to": "~0.0.10"
+        ,"grunt-copy-to": "~0.0.12"
         ,"grunt-translate-extract": "~0.0.2"
         ,"grunt-typescript": "0.3.8"
         ,"grunt-autowatch": "~0.1.4"
