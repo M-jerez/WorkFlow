@@ -40,8 +40,8 @@ module.exports = function copyto(grunt) {
     return taskConfig;
 
     /**
-     * Returns an array with all the modules within the modules directory.
-     * module Name = ( modules > subFolder );
+     * Returns an array with all the app within the app directory.
+     * module Name = ( app > subFolder );
      * @returns {Array}
      */
     function getModuleList() {

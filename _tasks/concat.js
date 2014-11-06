@@ -6,7 +6,6 @@ var dependencies = require("../ModuleWorkFlow").JsDependencies;
 module.exports = function concat(grunt) {
     // Load task
     grunt.loadNpmTasks('grunt-contrib-concat');
-    var build = grunt.config.get("build");
 
     // Options
     return {

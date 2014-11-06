@@ -17,6 +17,7 @@
         ,"grunt-typescript": "0.3.8"
         ,"grunt-autowatch": "~0.1.4"
         ,"colors": "*"
+        ,"grunt-bower-concat":"0.4.x"
     }
     ,"repository":{
         "type":"git"

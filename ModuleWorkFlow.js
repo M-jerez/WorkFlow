@@ -1,11 +1,3 @@
-var path = require('path');
-
-
-/**
- * Project's root path.
- */
-var root = __dirname;
-
 /**
  * #############################################################################
  * BUILD CONFIGURATION
@@ -20,7 +12,7 @@ exports.buildConfig = {
      * No file should be edited here directly.
      * (Absolute Path)
      */
-    projectBackend : path.join(root,"_app/")
+    projectBackend : "_backend/"
 
     /**
      * FrontEnd directory. Usually the http root directory.
@@ -28,24 +20,24 @@ exports.buildConfig = {
      * No file should be edited here directly.
      * (Absolute Path)
      */
-    ,projectFronted : path.join(root,"_public/")
+    ,projectFronted : "_frontend/"
 
 
     /**
      * Directory used as template to create new Modules.
      * Wen the "grunt newModule:Modulename" task is run, a copy of this directory  is created in
-     * the modules directory, and all the files are prefixed with the
+     * the app directory, and all the files are prefixed with the
      * new moduleName.
      * (Absolute Path)
      */
-    ,newModuleTemplate : path.join(root,"_newModule/")
+    ,newModuleTemplate : "_newModule/"
 
     /**
      * Modules directory.
      * Each Module is a sub-folder of this directory.
      * (Absolute Path)
      */
-    ,modules : path.join(root,"modules/")
+    ,modules : "app/"
 
 
     /**
@@ -83,10 +75,8 @@ exports.buildConfig = {
  * #################################################################################################
  */
 exports.JsDependencies = [
-// example paths (not real)
-// "./bower/components/jquery/index.js"
-// "./modules/index/frontend/required.js"
-
+    "./bower_components/underscore/underscore.js"
+    ,"./bower_components/backbone/backbone.js"
 ];
 
 

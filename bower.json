@@ -1,0 +1,21 @@
+{
+  "name": "ModuleWorkFlow",
+  "main": "ModuleWorkFlow.js",
+  "version": "0.0.1",
+  "homepage": "https://github.com/M-jerez/ModuleWorkFlow",
+  "authors": [
+    "Ma-Jerez <jerez.m82@gmail.com>"
+  ],
+  "description": "Workflow for web projects based on grunt tasks and modularization",
+  "keywords": [
+    "web",
+    "modules",
+    "workflow",
+    "grunt"
+  ],
+  "dependencies":{
+    "backbone":"1.1.2"
+  },
+  "license": "MIT",
+  "private": true
+}
